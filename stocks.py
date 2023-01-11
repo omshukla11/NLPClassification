@@ -129,3 +129,4 @@ for row in range(0,len(test_data.index)):
 X_test = cv.transform(test_headlines)
 cm_test = confusion_matrix(y_test, rf_classifier.predict(X_test))
 acc_test = accuracy_score(y_test, y_pred)
+print("accuracy:   %0.3f" % acc_test)
