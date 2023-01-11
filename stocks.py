@@ -121,4 +121,11 @@ for x in range(len(test_data.index)):
             nh = ' '.join(temp)
         else:
             print(nh)
-            
+
+test_headlines = [] 
+for row in range(0,len(test_data.index)):
+    test_headlines.append(' '.join(str(x) for x in test_data.iloc[row,0:25]))
+
+X_test = cv.transform(test_headlines)
+cm_test = confusion_matrix(y_test, rf_classifier.predict(X_test))
+acc_test = accuracy_score(y_test, y_pred)
